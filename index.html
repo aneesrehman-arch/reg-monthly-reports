@@ -110,7 +110,7 @@
     #toolbar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 14px;
       padding: 10px 20px;
       background: #ffffff;
       border-bottom: 1px solid #d1d5db;
@@ -121,7 +121,22 @@
       font-size: 0.875rem;
       font-weight: 600;
       color: #111827;
+      flex: 1;
     }
+
+    #market-filter {
+      padding: 5px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      background: #f9fafb;
+      font-family: inherit;
+      font-size: 0.8rem;
+      color: #374151;
+      cursor: pointer;
+      min-width: 180px;
+    }
+
+    #market-filter:focus { outline: none; border-color: #cd040b; }
 
     #open-tab-btn {
       display: inline-flex;
@@ -209,6 +224,9 @@
 <div id="main">
   <div id="toolbar">
     <span id="report-title">SLA Report · March 2026</span>
+    <select id="market-filter" title="Filter by sub market">
+      <option value="">All Sub Markets</option>
+    </select>
     <a id="open-tab-btn" href="#" target="_blank">
       ↗ Open in new tab
     </a>
@@ -217,10 +235,48 @@
 </div>
 
 <script>
-  const viewer = document.getElementById('viewer');
-  const title  = document.getElementById('report-title');
-  const link   = document.getElementById('open-tab-btn');
-  const btns   = document.querySelectorAll('.report-btn');
+  const viewer  = document.getElementById('viewer');
+  const title   = document.getElementById('report-title');
+  const link    = document.getElementById('open-tab-btn');
+  const filter  = document.getElementById('market-filter');
+  const btns    = document.querySelectorAll('.report-btn');
+
+  // Populate sub-market dropdown from the loaded iframe
+  function populateFilter() {
+    const iDoc = viewer.contentDocument;
+    if (!iDoc) return;
+    const markets = new Set();
+    iDoc.querySelectorAll('.market-title').forEach(el => {
+      const name = el.textContent.trim();
+      if (name) markets.add(name);
+    });
+    filter.innerHTML = '<option value="">All Sub Markets</option>';
+    [...markets].sort().forEach(m => {
+      const opt = document.createElement('option');
+      opt.value = m;
+      opt.textContent = m;
+      filter.appendChild(opt);
+    });
+  }
+
+  // Show/hide market cards in the iframe
+  function applyFilter() {
+    const selected = filter.value;
+    const iDoc = viewer.contentDocument;
+    if (!iDoc) return;
+    iDoc.querySelectorAll('.market-card').forEach(card => {
+      const titleEl = card.querySelector('.market-title');
+      const match = !selected || (titleEl && titleEl.textContent.trim() === selected);
+      card.style.display = match ? '' : 'none';
+    });
+  }
+
+  viewer.addEventListener('load', () => {
+    filter.value = '';
+    populateFilter();
+  });
+
+  filter.addEventListener('change', applyFilter);
 
   function activate(btn) {
     btns.forEach(b => b.classList.remove('active'));

@@ -1,0 +1,4 @@
+# Source data — keep off GitHub
+*.xlsx
+*.csv
+*.ps1

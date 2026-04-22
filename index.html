@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REG Monthly Production Reports</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Verizon NHG TX", Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background: #f5f7fa;
+    }
+
+    /* ── Sidebar ── */
+    #sidebar {
+      width: 260px;
+      min-width: 260px;
+      background: #ffffff;
+      border-right: 1px solid #d1d5db;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .sidebar-header {
+      padding: 20px 18px 16px;
+      border-bottom: 2px solid #cd040b;
+      background: #1a1a1a;
+    }
+
+    .sidebar-header h1 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+
+    .sidebar-header p {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 3px;
+    }
+
+    nav { padding: 12px 0; flex: 1; }
+
+    .month-group { margin-bottom: 4px; }
+
+    .month-label {
+      padding: 8px 18px 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #6b7280;
+    }
+
+    .report-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 9px 18px 9px 26px;
+      border: none;
+      background: none;
+      text-align: left;
+      font-family: inherit;
+      font-size: 0.875rem;
+      color: #374151;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+
+    .report-btn:hover { background: #f3f4f6; }
+
+    .report-btn.active {
+      background: #fef2f2;
+      color: #cd040b;
+      font-weight: 600;
+      border-left: 3px solid #cd040b;
+      padding-left: 23px;
+    }
+
+    .report-btn .icon {
+      font-size: 0.8rem;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .report-btn.active .icon { opacity: 1; }
+
+    .sidebar-footer {
+      padding: 12px 18px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.72rem;
+      color: #9ca3af;
+    }
+
+    /* ── Main viewer ── */
+    #main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #d1d5db;
+      min-height: 46px;
+    }
+
+    #report-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    #open-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      background: #f9fafb;
+      font-family: inherit;
+      font-size: 0.8rem;
+      color: #374151;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.12s;
+    }
+
+    #open-tab-btn:hover { background: #f3f4f6; border-color: #9ca3af; }
+
+    #viewer {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: #f5f7fa;
+    }
+  </style>
+</head>
+<body>
+
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <h1>REG Monthly Production Reports</h1>
+    <p>South Region · 2026</p>
+  </div>
+
+  <nav id="nav">
+
+    <div class="month-group">
+      <div class="month-label">March 2026</div>
+      <button class="report-btn"
+        data-src="March%202026/REG_CX_ISA_SLA_Report_March_2026.html"
+        data-label="SLA Report · March 2026">
+        <span class="icon">📊</span> SLA Report
+      </button>
+      <button class="report-btn"
+        data-src="March%202026/REG_CX_ISA_Status_Report_March_2026.html"
+        data-label="Status Report · March 2026">
+        <span class="icon">📋</span> Status Report
+      </button>
+    </div>
+
+    <div class="month-group">
+      <div class="month-label">February 2026</div>
+      <button class="report-btn"
+        data-src="February%202026/REG_CX_ISA_SLA_Report_February_2026.html"
+        data-label="SLA Report · February 2026">
+        <span class="icon">📊</span> SLA Report
+      </button>
+      <button class="report-btn"
+        data-src="February%202026/REG_CX_ISA_Status_Report_February_2026.html"
+        data-label="Status Report · February 2026">
+        <span class="icon">📋</span> Status Report
+      </button>
+    </div>
+
+    <div class="month-group">
+      <div class="month-label">January 2026</div>
+      <button class="report-btn"
+        data-src="January%202026/REG_CX_ISA_SLA_Report_January_2026.html"
+        data-label="SLA Report · January 2026">
+        <span class="icon">📊</span> SLA Report
+      </button>
+      <button class="report-btn"
+        data-src="January%202026/REG_CX_ISA_Status_Report_January_2026.html"
+        data-label="Status Report · January 2026">
+        <span class="icon">📋</span> Status Report
+      </button>
+    </div>
+
+  </nav>
+
+  <div class="sidebar-footer">Updated April 2026</div>
+</aside>
+
+<div id="main">
+  <div id="toolbar">
+    <span id="report-title">SLA Report · March 2026</span>
+    <a id="open-tab-btn" href="#" target="_blank">
+      ↗ Open in new tab
+    </a>
+  </div>
+  <iframe id="viewer" src="March%202026/REG_CX_ISA_SLA_Report_March_2026.html" title="Report viewer"></iframe>
+</div>
+
+<script>
+  const viewer = document.getElementById('viewer');
+  const title  = document.getElementById('report-title');
+  const link   = document.getElementById('open-tab-btn');
+  const btns   = document.querySelectorAll('.report-btn');
+
+  function activate(btn) {
+    btns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const src   = btn.dataset.src;
+    const label = btn.dataset.label;
+    viewer.src  = src;
+    title.textContent = label;
+    link.href   = src;
+  }
+
+  btns.forEach(btn => btn.addEventListener('click', () => activate(btn)));
+
+  // Default: first button (March SLA)
+  activate(btns[0]);
+</script>
+
+</body>
+</html>

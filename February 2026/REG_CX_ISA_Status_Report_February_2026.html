@@ -26,6 +26,10 @@
         tr.info { background-color: #dbeafe; color: #1d4ed8; }
         tr.approved td, tr.warning td, tr.info td { color: inherit; }
         .grand-total { font-weight: bold; background-color: #f3f4f6; }
+        .approval-badge { font-size: 1rem; font-weight: 700; padding: 3px 12px; border-radius: 12px; margin-left: 10px; vertical-align: middle; letter-spacing: 0.01em; }
+        .approval-badge.positive { background: #ecfdf5; color: #059669; }
+        .approval-badge.negative { background: #fef2f2; color: #dc2626; }
+        .approval-badge.neutral  { background: #f3f4f6; color: #6b7280; }
     </style>
 </head>
 <body>
@@ -34,9 +38,9 @@
     <h2>February 2026</h2>
         <p>This report displays REG CX and REG ISA status by market, with separate sections for each status type.</p>
     </div><div class='market-card'>
-<div class='market-header'><div class='market-title'>Carolinas/Tennessee</div><div><span style='font-size:.95rem;color:#374151;'>CX rows: 2998, ISA rows: 4296</span></div></div>
+<div class='market-header'><div class='market-title'>Carolinas/Tennessee</div></div>
 <div class='section'>
-<h3>REG CX Status</h3>
+<h3>REG CX Status <span class='approval-badge positive'>+299 &#9650;</span></h3>
 <div class='table-container'>
 <table>
 <thead>
@@ -69,7 +73,7 @@
 </div>
 </div>
 <div class='section'>
-<h3>REG ISA Status</h3>
+<h3>REG ISA Status <span class='approval-badge positive'>+136 &#9650;</span></h3>
 <div class='table-container'>
 <table>
 <thead>
@@ -86,21 +90,21 @@
 </thead>
 <tbody>
 <tr class='approved'><td class='status-col'>Reg ISA Approved</td><td>157</td><td>773</td><td>383</td><td>26</td><td>165</td><td>1504</td><td>35%</td></tr>
-<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>145</td><td>556</td><td>337</td><td>127</td><td>471</td><td>1636</td><td>38%</td></tr>
+<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>145</td><td>556</td><td>337</td><td>133</td><td>471</td><td>1642</td><td>38%</td></tr>
 <tr class='warning'><td class='status-col'>Rejected to RF</td><td>4</td><td>3</td><td>1</td><td></td><td>55</td><td>63</td><td>1%</td></tr>
 <tr class='info'><td class='status-col'>With South Regulatory Team</td><td>18</td><td>23</td><td>2</td><td></td><td>239</td><td>282</td><td>7%</td></tr>
+<tr class='info'><td class='status-col'>Pending 3rd Party EME Study from Vendor</td><td></td><td>7</td><td>1</td><td></td><td>3</td><td>11</td><td>0%</td></tr>
 <tr class='info'><td class='status-col'>ISA submitted but transmission restricted</td><td>10</td><td>3</td><td>1</td><td></td><td>786</td><td>800</td><td>19%</td></tr>
-<tr class='info'><td class='status-col'>Pending 3rd Party EME order by South Regulatory</td><td></td><td>7</td><td>1</td><td></td><td>3</td><td>11</td><td>0%</td></tr>
-<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>334</strong></td><td><strong>1365</strong></td><td><strong>725</strong></td><td><strong>153</strong></td><td><strong>1719</strong></td><td><strong>4296</strong></td><td><strong>100%</strong></td></tr>
+<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>334</strong></td><td><strong>1365</strong></td><td><strong>725</strong></td><td><strong>159</strong></td><td><strong>1719</strong></td><td><strong>4302</strong></td><td><strong>100%</strong></td></tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
 <div class='market-card'>
-<div class='market-header'><div class='market-title'>Central Gulf Coast</div><div><span style='font-size:.95rem;color:#374151;'>CX rows: 3194, ISA rows: 4288</span></div></div>
+<div class='market-header'><div class='market-title'>Central Gulf Coast</div></div>
 <div class='section'>
-<h3>REG CX Status</h3>
+<h3>REG CX Status <span class='approval-badge positive'>+17 &#9650;</span></h3>
 <div class='table-container'>
 <table>
 <thead>
@@ -115,7 +119,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class='approved'><td class='status-col'>Reg Construction Approved</td><td>261</td><td>906</td><td>671</td><td>160</td><td>1998</td><td>63%</td></tr>
+<tr class='approved'><td class='status-col'>Reg Construction Approved</td><td>261</td><td>906</td><td>671</td><td>159</td><td>1997</td><td>63%</td></tr>
 <tr class='warning'><td class='status-col'>Not Ready for REG</td><td>374</td><td>200</td><td>254</td><td>165</td><td>993</td><td>31%</td></tr>
 <tr class='warning'><td class='status-col'>Rejected to Real Estate</td><td>11</td><td>53</td><td>1</td><td>4</td><td>69</td><td>2%</td></tr>
 <tr class='info'><td class='status-col'>With South Regulatory Team</td><td>12</td><td>12</td><td>3</td><td>3</td><td>30</td><td>1%</td></tr>
@@ -127,13 +131,13 @@
 <tr class='info'><td class='status-col'>With HQ Regulatory for FAA/ASR Filing</td><td></td><td>31</td><td>4</td><td>1</td><td>36</td><td>1%</td></tr>
 <tr class='info'><td class='status-col'>With HQ Regulatory for NRC Review</td><td></td><td>2</td><td></td><td></td><td>2</td><td>0%</td></tr>
 <tr class='info'><td class='status-col'>With HQ Regulatory for USR Approval</td><td></td><td>5</td><td></td><td></td><td>5</td><td>0%</td></tr>
-<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>672</strong></td><td><strong>1235</strong></td><td><strong>951</strong></td><td><strong>336</strong></td><td><strong>3194</strong></td><td><strong>100%</strong></td></tr>
+<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>672</strong></td><td><strong>1235</strong></td><td><strong>951</strong></td><td><strong>335</strong></td><td><strong>3193</strong></td><td><strong>100%</strong></td></tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class='section'>
-<h3>REG ISA Status</h3>
+<h3>REG ISA Status <span class='approval-badge negative'>-21 &#9660;</span></h3>
 <div class='table-container'>
 <table>
 <thead>
@@ -149,22 +153,22 @@
 </tr>
 </thead>
 <tbody>
-<tr class='approved'><td class='status-col'>Reg ISA Approved</td><td>287</td><td>918</td><td>788</td><td>109</td><td>1196</td><td>3298</td><td>77%</td></tr>
-<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>376</td><td>285</td><td>152</td><td>54</td><td>64</td><td>931</td><td>22%</td></tr>
+<tr class='approved'><td class='status-col'>Reg ISA Approved</td><td>287</td><td>918</td><td>788</td><td>105</td><td>1200</td><td>3298</td><td>77%</td></tr>
+<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>376</td><td>285</td><td>152</td><td>56</td><td>64</td><td>933</td><td>22%</td></tr>
 <tr class='warning'><td class='status-col'>Rejected to RF</td><td>1</td><td>7</td><td>1</td><td></td><td></td><td>9</td><td>0%</td></tr>
 <tr class='info'><td class='status-col'>With South Regulatory Team</td><td>8</td><td>18</td><td>6</td><td></td><td>7</td><td>39</td><td>1%</td></tr>
+<tr class='info'><td class='status-col'>Pending 3rd Party EME Study from Vendor</td><td></td><td>2</td><td>4</td><td></td><td></td><td>6</td><td>0%</td></tr>
 <tr class='info'><td class='status-col'>ISA submitted but transmission restricted</td><td></td><td>5</td><td></td><td></td><td></td><td>5</td><td>0%</td></tr>
-<tr class='info'><td class='status-col'>Pending 3rd Party EME order by South Regulatory</td><td></td><td>2</td><td>4</td><td></td><td></td><td>6</td><td>0%</td></tr>
-<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>672</strong></td><td><strong>1235</strong></td><td><strong>951</strong></td><td><strong>163</strong></td><td><strong>1267</strong></td><td><strong>4288</strong></td><td><strong>100%</strong></td></tr>
+<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>672</strong></td><td><strong>1235</strong></td><td><strong>951</strong></td><td><strong>161</strong></td><td><strong>1271</strong></td><td><strong>4290</strong></td><td><strong>100%</strong></td></tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
 <div class='market-card'>
-<div class='market-header'><div class='market-title'>Florida</div><div><span style='font-size:.95rem;color:#374151;'>CX rows: 2378, ISA rows: 2196</span></div></div>
+<div class='market-header'><div class='market-title'>Florida</div></div>
 <div class='section'>
-<h3>REG CX Status</h3>
+<h3>REG CX Status <span class='approval-badge positive'>+116 &#9650;</span></h3>
 <div class='table-container'>
 <table>
 <thead>
@@ -180,7 +184,7 @@
 </thead>
 <tbody>
 <tr class='approved'><td class='status-col'>Reg Construction Approved</td><td>231</td><td>444</td><td>601</td><td>143</td><td>1419</td><td>60%</td></tr>
-<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>56</td><td>154</td><td>234</td><td>241</td><td>685</td><td>29%</td></tr>
+<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>56</td><td>154</td><td>234</td><td>242</td><td>686</td><td>29%</td></tr>
 <tr class='warning'><td class='status-col'>Rejected to Real Estate</td><td>12</td><td>18</td><td>15</td><td>2</td><td>47</td><td>2%</td></tr>
 <tr class='info'><td class='status-col'>With South Regulatory Team</td><td>3</td><td>5</td><td>25</td><td>14</td><td>47</td><td>2%</td></tr>
 <tr class='info'><td class='status-col'>With South Regulatory Team for NEPA Analysis processing</td><td>1</td><td>1</td><td>1</td><td>1</td><td>4</td><td>0%</td></tr>
@@ -191,13 +195,13 @@
 <tr class='info'><td class='status-col'>With HQ Regulatory for FAA/ASR Filing</td><td>2</td><td>6</td><td>6</td><td></td><td>14</td><td>1%</td></tr>
 <tr class='info'><td class='status-col'>With HQ Regulatory for NRC Review</td><td></td><td></td><td>25</td><td>1</td><td>26</td><td>1%</td></tr>
 <tr class='info'><td class='status-col'>With HQ Regulatory for USR Approval</td><td></td><td>3</td><td>1</td><td></td><td>4</td><td>0%</td></tr>
-<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>314</strong></td><td><strong>647</strong></td><td><strong>1012</strong></td><td><strong>405</strong></td><td><strong>2378</strong></td><td><strong>100%</strong></td></tr>
+<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>314</strong></td><td><strong>647</strong></td><td><strong>1012</strong></td><td><strong>406</strong></td><td><strong>2379</strong></td><td><strong>100%</strong></td></tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class='section'>
-<h3>REG ISA Status</h3>
+<h3>REG ISA Status <span class='approval-badge positive'>+170 &#9650;</span></h3>
 <div class='table-container'>
 <table>
 <thead>
@@ -213,22 +217,22 @@
 </tr>
 </thead>
 <tbody>
-<tr class='approved'><td class='status-col'>Reg ISA Approved</td><td>161</td><td>288</td><td>413</td><td>39</td><td>20</td><td>921</td><td>42%</td></tr>
-<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>150</td><td>333</td><td>584</td><td>79</td><td>72</td><td>1218</td><td>55%</td></tr>
+<tr class='approved'><td class='status-col'>Reg ISA Approved</td><td>161</td><td>288</td><td>413</td><td>38</td><td>21</td><td>921</td><td>41%</td></tr>
+<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>150</td><td>333</td><td>584</td><td>125</td><td>72</td><td>1264</td><td>56%</td></tr>
 <tr class='warning'><td class='status-col'>Rejected to RF</td><td></td><td>3</td><td>1</td><td></td><td></td><td>4</td><td>0%</td></tr>
 <tr class='info'><td class='status-col'>With South Regulatory Team</td><td>2</td><td>14</td><td>6</td><td></td><td>12</td><td>34</td><td>2%</td></tr>
+<tr class='info'><td class='status-col'>Pending 3rd Party EME Study from Vendor</td><td></td><td>3</td><td>7</td><td></td><td></td><td>10</td><td>0%</td></tr>
 <tr class='info'><td class='status-col'>ISA submitted but transmission restricted</td><td>1</td><td>6</td><td>1</td><td>1</td><td></td><td>9</td><td>0%</td></tr>
-<tr class='info'><td class='status-col'>Pending 3rd Party EME order by South Regulatory</td><td></td><td>3</td><td>7</td><td></td><td></td><td>10</td><td>0%</td></tr>
-<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>314</strong></td><td><strong>647</strong></td><td><strong>1012</strong></td><td><strong>119</strong></td><td><strong>104</strong></td><td><strong>2196</strong></td><td><strong>100%</strong></td></tr>
+<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>314</strong></td><td><strong>647</strong></td><td><strong>1012</strong></td><td><strong>164</strong></td><td><strong>105</strong></td><td><strong>2242</strong></td><td><strong>100%</strong></td></tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
 <div class='market-card'>
-<div class='market-header'><div class='market-title'>Georgia/Alabama</div><div><span style='font-size:.95rem;color:#374151;'>CX rows: 2535, ISA rows: 2421</span></div></div>
+<div class='market-header'><div class='market-title'>Georgia/Alabama</div></div>
 <div class='section'>
-<h3>REG CX Status</h3>
+<h3>REG CX Status <span class='approval-badge positive'>+117 &#9650;</span></h3>
 <div class='table-container'>
 <table>
 <thead>
@@ -259,7 +263,7 @@
 </div>
 </div>
 <div class='section'>
-<h3>REG ISA Status</h3>
+<h3>REG ISA Status <span class='approval-badge positive'>+142 &#9650;</span></h3>
 <div class='table-container'>
 <table>
 <thead>
@@ -275,13 +279,13 @@
 </tr>
 </thead>
 <tbody>
-<tr class='approved'><td class='status-col'>Reg ISA Approved</td><td>212</td><td>737</td><td>280</td><td>15</td><td>34</td><td>1278</td><td>53%</td></tr>
-<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>166</td><td>278</td><td>618</td><td>21</td><td>7</td><td>1090</td><td>45%</td></tr>
+<tr class='approved'><td class='status-col'>Reg ISA Approved</td><td>212</td><td>737</td><td>280</td><td>15</td><td>34</td><td>1278</td><td>52%</td></tr>
+<tr class='warning'><td class='status-col'>Not Ready for REG</td><td>166</td><td>278</td><td>618</td><td>58</td><td>11</td><td>1131</td><td>46%</td></tr>
 <tr class='warning'><td class='status-col'>Rejected to RF</td><td>2</td><td>2</td><td>2</td><td></td><td></td><td>6</td><td>0%</td></tr>
 <tr class='info'><td class='status-col'>With South Regulatory Team</td><td>4</td><td>11</td><td>12</td><td></td><td>13</td><td>40</td><td>2%</td></tr>
+<tr class='info'><td class='status-col'>Pending 3rd Party EME Study from Vendor</td><td></td><td>3</td><td>1</td><td></td><td></td><td>4</td><td>0%</td></tr>
 <tr class='info'><td class='status-col'>ISA submitted but transmission restricted</td><td>1</td><td>2</td><td></td><td></td><td></td><td>3</td><td>0%</td></tr>
-<tr class='info'><td class='status-col'>Pending 3rd Party EME order by South Regulatory</td><td></td><td>3</td><td>1</td><td></td><td></td><td>4</td><td>0%</td></tr>
-<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>385</strong></td><td><strong>1033</strong></td><td><strong>913</strong></td><td><strong>36</strong></td><td><strong>54</strong></td><td><strong>2421</strong></td><td><strong>100%</strong></td></tr>
+<tr class='grand-total'><td class='status-col'><strong>Grand Total</strong></td><td><strong>385</strong></td><td><strong>1033</strong></td><td><strong>913</strong></td><td><strong>73</strong></td><td><strong>58</strong></td><td><strong>2462</strong></td><td><strong>100%</strong></td></tr>
 </tbody>
 </table>
 </div>

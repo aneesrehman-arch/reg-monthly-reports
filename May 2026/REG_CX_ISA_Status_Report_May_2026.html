@@ -15,10 +15,18 @@
         .market-title { font-size: 1.25rem; font-weight: 700; color: #111827; }
         .section { margin-bottom: 24px; }
         .table-container { overflow-x: auto; }
-        table { border-collapse: collapse; width: 100%; margin-top: 8px; table-layout: fixed; outline: 2px solid #000; }
+        table { border-collapse: collapse; width: 100%; margin-top: 8px; table-layout: fixed; }
         th, td { border: 1px solid #000; padding: 6px; text-align: center; }
-        thead th { border-bottom: 2px solid #000; }
-        .grand-total td { border-top: 2px solid #000; }
+        thead th { border-top: 2px solid #000; border-bottom: 2px solid #000; }
+        thead th:first-child { border-left: 2px solid #000; }
+        thead th:last-child { border-right: 2px solid #000; }
+        tbody tr:first-child td { border-top: 2px solid #000; }
+        tbody tr:nth-last-child(2) td { border-bottom: 2px solid #000; }
+        tbody tr:not(.grand-total) td:first-child { border-left: 2px solid #000; }
+        tbody tr:not(.grand-total) td:last-child { border-right: 2px solid #000; }
+        tr.grand-total td { border-top: 2px solid #000; border-bottom: 2px solid #000; }
+        tr.grand-total td:first-child { border-left: 2px solid #000; }
+        tr.grand-total td:last-child { border-right: 2px solid #000; }
         th { background-color: #f2f2f2; }
         tr:nth-child(even) { background-color: #f9f9f9; }
         .status-col { text-align: left; width: 35%; }

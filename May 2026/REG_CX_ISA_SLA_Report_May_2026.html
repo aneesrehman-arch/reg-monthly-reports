@@ -16,8 +16,15 @@
         .market-subtitle { color: #475569; margin-bottom: 18px; }
         .section { margin-bottom: 20px; }
         .table-container { overflow-x: auto; }
-        table { border-collapse: collapse; width: 100%; margin-top: 8px; table-layout: fixed; outline: 2px solid #000; }
+        table { border-collapse: collapse; width: 100%; margin-top: 8px; table-layout: fixed; }
         th, td { border: 1px solid #000; padding: 10px; text-align: center; }
+        thead th { border-top: 2px solid #000; border-bottom: 2px solid #000; }
+        thead th:first-child { border-left: 2px solid #000; }
+        thead th:last-child { border-right: 2px solid #000; }
+        tbody tr:first-child td { border-top: 2px solid #000; }
+        tbody tr:last-child td { border-bottom: 2px solid #000; }
+        tbody td:first-child { border-left: 2px solid #000; }
+        tbody td:last-child { border-right: 2px solid #000; }
         th { background-color: #f8fafc; font-weight: 700; color: #1f2937; }
         td { color: #374151; }
         td:first-child, th:first-child { text-align: left; width: 34%; }

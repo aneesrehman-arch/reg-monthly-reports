@@ -156,6 +156,31 @@
 
     #open-tab-btn:hover { background: #f3f4f6; border-color: #9ca3af; }
 
+    #ytd-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 10px 20px;
+      background: #1a1a1a;
+      border-bottom: 2px solid #cd040b;
+    }
+
+    .ytd-stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: #9ca3af;
+      white-space: nowrap;
+    }
+
+    .ytd-stat strong {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
     #viewer {
       flex: 1;
       width: 100%;
@@ -264,6 +289,10 @@
 </aside>
 
 <div id="main">
+  <div id="ytd-bar">
+    <div class="ytd-stat">Year to Date REG CX Approvals: <strong>5,586</strong></div>
+    <div class="ytd-stat">Year to Date REG ISA Approvals: <strong>6,250</strong></div>
+  </div>
   <div id="toolbar">
     <span id="report-title">Status Report · June 2026</span>
     <select id="market-filter" title="Filter by sub market">
